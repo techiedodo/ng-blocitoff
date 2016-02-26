@@ -1,1 +1,8 @@
-<h1>Home Page</h1>
+<h1>Task Home Page</h1>
+<form ng-submit="addTask()">
+    Please enter task:
+    <input ng-model="newTaskText"/><br>
+    Please enter date:
+    <input ng-model="newTaskDate"/>
+    <button type="submit">Add Message</button>
+</form>
