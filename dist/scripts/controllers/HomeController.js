@@ -10,7 +10,7 @@
         $scope.addTask = function() {
             $scope.tasks.$add({
                 text: $scope.newTaskText,
-                date: $scope.newTaskDate
+                date: $scope.newTaskDate.getTime()
             });
         };
     }

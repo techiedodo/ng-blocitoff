@@ -1,8 +1,25 @@
-<h1>Task Home Page</h1>
-<form ng-submit="addTask()">
-    Please enter task:
-    <input ng-model="newTaskText"/><br>
-    Please enter date:
-    <input ng-model="newTaskDate"/>
-    <button type="submit">Add Message</button>
-</form>
+    <h1>Task Home Page</h1>
+        <div id="task_wrapper">
+            <form name="taskForm" ng-submit="addTask()" class="row">
+                <h4 class="col_2 title">Please enter task:</h4>
+                <input ng-model="newTaskText" class="col_4 text-field" required/>
+                <h4 class="col_2 title">Please enter date:</h4>
+                <input type="date"  ng-model="newTaskDate" class="col_2" required/>
+                <button type="submit" class="col_2 last">Add Message</button>
+            </form>
+            <div role="alert">
+                <span class="error" ng-show="taskForm.input.$error.date"></span>
+            </div>
+        </div>
+    <hr>
+    <h2>Current Tasks</h2>
+    <table class="table-task">
+        <tr id="table-header">
+            <th>Task</th>
+            <th>Date</th>
+        </tr>
+        <tr ng-repeat="task in tasks">
+            <td> {{ task.text }} </td>
+            <td id="task-date"> {{ task.date | date: "MM-dd-yyyy" }} </td>
+        </tr>
+    </table>
