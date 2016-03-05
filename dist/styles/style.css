@@ -28,6 +28,9 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
     background-color: rgba(249, 248, 249,.7);
 }
+td {
+    text-align: center;
+}
 #task_wrapper {
     max-width: 900px;
     margin: 0 auto;

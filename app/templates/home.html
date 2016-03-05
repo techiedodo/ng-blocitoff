@@ -16,10 +16,16 @@
     <table class="table-task">
         <tr id="table-header">
             <th>Task</th>
-            <th>Date</th>
+            <th>Target Date of Completion</th>
+            <th>Created On</th>
+            <th>Days Left</th>
+            <th>Taks Status</th>
         </tr>
         <tr ng-repeat="task in tasks">
             <td> {{ task.text }} </td>
-            <td id="task-date"> {{ task.date | date: "MM-dd-yyyy" }} </td>
+            <td id="task-date"> {{ task.date | date: "MM-dd-yy" }} </td>
+            <td> {{task.created | date: "MM-dd-yy" }} </td>
+            <td> {{ (4 - (((start) - (task.created))/86400000)).toPrecision(2) }} </td>
+            <td> {{ task.status }} </td>
         </tr>
     </table>
