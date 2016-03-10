@@ -3,10 +3,10 @@
         <div id="task_wrapper" class="col-md-3">
             <form name="taskForm" ng-submit="addTask()" id="formTask">
                 <h4 class="title">Please enter task:</h4>
-                <input ng-model="newTaskText" class="text-field" required/><br>
+                <input ng-model="newTaskText" class="input-field" required/><br>
                 <h4 class="title">Please enter date:</h4>
-                <input type="date"  ng-model="newTaskDate" required/><br>
-                <button type="submit">Add Message</button>
+                <input type="date"  ng-model="newTaskDate" class="input-field" required/><br>
+                <button type="submit" class="btn ghost">Add Message</button>
             </form>
             <div role="alert">
                 <span class="error" ng-show="taskForm.input.$error.date"></span>
