@@ -1,33 +1,37 @@
-    <h1>Task Home Page</h1>
-        <div id="task_wrapper">
-            <form name="taskForm" ng-submit="addTask()" class="row">
-                <h4 class="col_2 title">Please enter task:</h4>
-                <input ng-model="newTaskText" class="col_4 text-field" required/>
-                <h4 class="col_2 title">Please enter date:</h4>
-                <input type="date"  ng-model="newTaskDate" class="col_2" required/>
-                <button type="submit" class="col_2 last">Add Message</button>
+<div>
+    <div class="wrapper row">
+        <div id="task_wrapper" class="col-md-3">
+            <form name="taskForm" ng-submit="addTask()" id="formTask">
+                <h4 class="title">Please enter task:</h4>
+                <input ng-model="newTaskText" class="text-field" required/><br>
+                <h4 class="title">Please enter date:</h4>
+                <input type="date"  ng-model="newTaskDate" required/><br>
+                <button type="submit">Add Message</button>
             </form>
             <div role="alert">
                 <span class="error" ng-show="taskForm.input.$error.date"></span>
             </div>
         </div>
-    <hr>
-    <h2>Current Tasks</h2>
-    <table class="table-task">
-        <tr id="table-header">
-            <th>Task</th>
-            <th>Target Date of Completion</th>
-            <th>Created On</th>
-            <th>Days Left</th>
-            <th>Taks Status</th>
-            <th>Completed</th>
-        </tr>
-        <tr ng-repeat="task in tasks" ng-hide="task.expired || task.status == 'complete'">
-            <td> {{ task.text }} </td>
-            <td id="task-date"> {{ task.date | date: "MM-dd-yy" }} </td>
-            <td> {{task.created | date: "MM-dd-yy" }} </td>
-            <td> {{ elapsedTime(task) }} </td>
-            <td> {{ task.status }} </td>
-            <td><input type="checkbox" ng-model='task.status' ng-click='completeTask(task)'></td>
-        </tr>
-    </table>
+        <div class="task_wrapper col-md-9">
+        <h2>Task Home Page</h2>
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <th>Target Date</th>
+                    <th>Created On</th>
+                    <th>Days Left</th>
+                    <th>Taks Status</th>
+                    <th>Completed</th>
+                </tr>
+                <tr ng-repeat="task in tasks" ng-hide="task.expired || task.status == 'complete'">
+                    <td> {{ task.text }} </td>
+                    <td id="task-date"> {{ task.date | date: "MM-dd-yy" }} </td>
+                    <td> {{task.created | date: "MM-dd-yy" }} </td>
+                    <td> {{ elapsedTime(task) }} </td>
+                    <td> {{ task.status }} </td>
+                    <td id="checkbox"><input type="checkbox" ng-model='task.status' ng-click='completeTask(task)'></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

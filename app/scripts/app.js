@@ -10,6 +10,11 @@
                 url: '/',
                 controller: 'HomeController as home',
                 templateUrl: '/templates/home.html'
+            })
+            .state('history', {
+                url: '/history',
+                controller: 'HistoryController as history',
+                templateUrl: '/templates/history.html'
             });
     }
     angular

@@ -1,0 +1,13 @@
+<table class="history-table">
+    <caption>Past Tasks</caption>
+    <tr id="table-header">
+        <th>Task</th>
+        <th>Created On</th>
+        <th>Taks Status</th>
+    </tr>
+    <tr ng-repeat="task in tasks" ng-show="task.expired || task.status == 'complete'">
+        <td> {{ task.text }} </td>
+        <td> {{task.created | date: "MM-dd-yy" }} </td>
+        <td> {{ task.status }}</td>
+    </tr>
+</table>

@@ -1,63 +1,85 @@
-h1 {
-    text-align: center;
-}
-h2 {
-    text-align: center;
-}
-input {
-    border: 1.5px solid white; 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
-}
-li {
-    line-height: 1.5rem;
-    text-align: center;
-}
-table, th , td {
-    border: 1px solid grey;
-    border-collapse: collapse;
-    padding: 0 5px;
+body {
     margin: 0 auto;
-}
-table tr:nth-child(odd) {
-    background-color: rgba(241, 248, 249,.7);
-}
-table tr:nth-child(even) {
-    background-color: rgba(249, 248, 249,.7);
-}
-td {
-    text-align: center;
-}
-#task_wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-}
-#task-date {
-    text-align: center;
-    width: 20%;
-}
-.container {
-    background: url(../assets/images/Task_BK.jpg) no-repeat center center fixed;
+    background: url(../assets/images/Task_BK.jpg) no-repeat center fixed;
     background-size: cover;
-    padding: 10px;
     font-family: 'Open Sans Condensed', sans-serif;
 }
-.title {
-    margin: 0 -8px 0 8px;
+table {
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    color: darkblue;
+    text-shadow: 1px 1px white;
+    font-size: 1.1em;
 }
-.list {
-    background-color: rgba(241, 248, 249,.7);
-    max-width: 400px;
+tr, th, td {
+    padding: 5px;
+    border-bottom: solid 1px black;
+}
+a {
+    text-decoration: none;
+    padding-left: 15px;
+    color: white;
+}
+caption {
+    text-align: left;
+    font-size: 1.75em;
+    font-weight: 700;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.footer {
+    border-top: 2px solid orange;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background:rgba(27, 149, 243, 0.6);
+    font-family: 'Pacifico', cursive;
+    color: white;
+    text-align: center;
+    height: 40px;
+    opacity: .5;
+}
+.app-name {
+    font-family: 'Pacifico', cursive;
+    color: white;
+}
+.app-name, .wrapper-links {
+    padding: 0;
+}
+.navbar, .wrapper {
+    max-width: 1000px;
     margin: 0 auto;
-    min-height: 65vh;
-    padding: 20px;
-    list-style: none;
-    border-radius: 8px;
 }
-.table-task {
+.wrapper {
+    padding-bottom: 100px;
+}
+.navbar {
+    height: 100px;
+    padding-top: 15px;
+}
+.wrapper-links, .app-name {
+    margin: 0 auto;
+}
+.wrapper-links {
+    text-align: right;
+    padding-top: 15px;
+}
+.history-table {
     max-width: 900px;
-    width: 60vw;
+    margin: 0 auto;
+}
+#nav-wrapper {
+    background: rgba(27, 149, 243, 0.6);
+    border-bottom: 2px solid orange;
+    opacity: .5;
+}
+#container-main {
+    padding: 0;
+}
+#checkbox {
+    text-align: center;
 }

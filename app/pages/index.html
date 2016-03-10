@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/styles/flexgrid.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Lobster|Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/styles/style.css">
     
     <!-- jQuery -->
@@ -25,9 +24,22 @@
     
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/HomeController.js"></script>
+    <script src="/scripts/controllers/HistoryController.js"></script>
 
 </head>
-<body class="container">
+<body class="container-fluid" id="container-main">
+    <div id="nav-wrapper">
+       <nav class="navbar row">
+            <h1 class="app-name col-md-8">Bloc-It-Off</h1>
+            <div class="wrapper-links col-md-4">
+            <a ui-sref="home" class="navbar-link">Main Page</a>
+            <a ui-sref="history" class="navbar-link">Past Tasks</a>
+            </div>
+        </nav>
+    </div>
     <ui-view></ui-view>
+    <div class="footer">
+        <p>TechieDodo &copy; 2016</p>
+    </div>
 </body>
 </html>
