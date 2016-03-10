@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     background: url(../assets/images/Task_BK.jpg) no-repeat center fixed;
     background-size: cover;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Poiret One', cursive;
 }
 table {
     border-radius: 10px;
@@ -43,14 +43,15 @@ caption {
     left: 0;
     padding: 1rem;
     background:rgba(27, 149, 243, 0.6);
-    font-family: 'Pacifico', cursive;
+    font-family: 'Dr Sugiyama', cursive;
     color: white;
     text-align: center;
     height: 40px;
     opacity: .5;
 }
 .app-name {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Dr Sugiyama', cursive;
+    font-size: 3.15em;
     color: white;
 }
 .app-name, .wrapper-links {
@@ -65,7 +66,7 @@ caption {
 }
 .navbar {
     height: 100px;
-    padding-top: 15px;
+    padding-top: 13px;
 }
 .wrapper-links, .app-name {
     margin: 0 auto;
@@ -77,6 +78,10 @@ caption {
 .history-table {
     max-width: 900px;
     margin: 0 auto;
+}
+.main-title {
+    color: orange;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.65);
 }
 #nav-wrapper {
     background: rgba(27, 149, 243, 0.6);
