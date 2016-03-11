@@ -20,11 +20,14 @@ tr, th, td {
 }
 a {
     text-decoration: none;
+    letter-spacing: 1.5px;
     padding-left: 15px;
     color: white;
+    text-shadow: .7px .7px orange;
 }
 a:hover {
     color: orange;
+    text-shadow: .7px .7px white;
 }
 caption {
     text-align: left;
