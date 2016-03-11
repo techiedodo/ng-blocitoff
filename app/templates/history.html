@@ -6,8 +6,8 @@
         <th>Taks Status</th>
     </tr>
     <tr ng-repeat="task in tasks" ng-show="task.expired || task.status == 'complete'">
-        <td> {{ task.text }} </td>
+        <td> {{ task.text }} <a href="" ng-click="tasks.$remove(task)" id="remove-task">(Delete)</a> </td>
         <td> {{task.created | date: "MM-dd-yy" }} </td>
-        <td> {{ task.status }}</td>
+        <td> {{ task.status }} </td>
     </tr>
 </table>

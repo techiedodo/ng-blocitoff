@@ -1,34 +1,42 @@
 <div>
     <div class="wrapper row">
-        <div id="task_wrapper" class="col-md-3">
+        <div id="task_wrapper" class="col-md-3 col-xs-12">
             <form name="taskForm" ng-submit="addTask()" id="formTask">
                 <h4 class="title">Please enter task:</h4>
-                <input ng-model="newTaskText" class="input-field" required/><br>
+                <input ng-model="newTaskText" class="input-field text-field" required/><br>
                 <h4 class="title">Please enter date:</h4>
-                <input type="date"  ng-model="newTaskDate" class="input-field" required/><br>
+                <input type="date"  ng-model="newTaskDate" class="input-field date-field" required/><br>
+                <select name="priority-list" ng-model="newTaskPriority" required>
+                        <option disabled ng-selected="true">Priority</option>
+                        <option value=3>High</option>
+                        <option value=2>Medium</option>
+                        <option value=1>Low</option>
+                </select>
                 <button type="submit" class="btn ghost">Add Message</button>
             </form>
             <div role="alert">
                 <span class="error" ng-show="taskForm.input.$error.date"></span>
             </div>
         </div>
-        <div class="task_wrapper col-md-9">
+        <div class="task_wrapper col-md-9 col-xs-12">
             <table>
                <caption>Current Tasks</caption>
                 <tr>
                     <th>Task</th>
                     <th>Target Date</th>
-                    <th>Created On</th>
+                    <!--<th>Created On</th>-->
                     <th>Days Left</th>
                     <th>Taks Status</th>
+                    <th>Priority</th>
                     <th>Completed</th>
                 </tr>
-                <tr ng-repeat="task in tasks" ng-hide="task.expired || task.status == 'complete'">
-                    <td> {{ task.text }} </td>
+                <tr ng-repeat="task in tasks | orderBy:'-priority'" ng-hide="task.expired || task.status == 'complete'">
+                    <td> {{ task.text }} <a href="" ng-click="tasks.$remove(task)" id="remove-task">(Delete)</a></td>
                     <td id="task-date"> {{ task.date | date: "MM-dd-yy" }} </td>
-                    <td> {{task.created | date: "MM-dd-yy" }} </td>
+                    <!--<td> {{task.created | date: "MM-dd-yy" }} </td>-->
                     <td> {{ elapsedTime(task) }} </td>
                     <td> {{ task.status }} </td>
+                    <td> {{ displayPriority(task) }} </td>
                     <td id="checkbox"><input type="checkbox" ng-model='task.status' ng-click='completeTask(task)'></td>
                 </tr>
             </table>

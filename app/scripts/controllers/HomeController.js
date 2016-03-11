@@ -13,7 +13,8 @@
                 created: Firebase.ServerValue.TIMESTAMP,
                 date: $scope.newTaskDate.getTime(),
                 status: 'active',
-                expired: false
+                expired: false,
+                priority: $scope.newTaskPriority
             });
         };  
         $scope.elapsedTime = function(currentTask) {
@@ -30,6 +31,16 @@
             if (task.status) {
                 tasksRef.child(task.$id).update({status: 'complete'});
             };
+        };
+        
+        $scope.displayPriority = function(task) {
+             if (task.priority == 3) {
+                    return "High";
+             } else if (task.priority == 2) {
+                    return "Medium";
+             }  else {
+                    return "Low";
+             };
         };
     }
     angular
