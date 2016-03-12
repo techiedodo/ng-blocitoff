@@ -34,7 +34,7 @@
                     <td> {{ task.text }} <a href="" ng-click="tasks.$remove(task)" id="remove-task">(Delete)</a></td>
                     <td id="task-date"> {{ task.date | date: "MM-dd-yy" }} </td>
                     <!--<td> {{task.created | date: "MM-dd-yy" }} </td>-->
-                    <td> {{ elapsedTime(task) }} </td>
+                    <td id="time"> {{ elapsedTime(task) }} </td>
                     <td> {{ task.status }} </td>
                     <td> {{ displayPriority(task) }} </td>
                     <td id="checkbox"><input type="checkbox" ng-model='task.status' ng-click='completeTask(task)'></td>

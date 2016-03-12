@@ -112,6 +112,9 @@ p {
     text-shadow: 1px 1px rgba(255, 255, 255, 0.75);
     padding: 0;
 }
+#time {
+    font-size: .75em;
+}
 .radio-button {
     margin-right: 5px;
 }

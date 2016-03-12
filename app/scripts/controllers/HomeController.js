@@ -18,9 +18,16 @@
             });
         };  
         $scope.elapsedTime = function(currentTask) {
-            var daysLeft = (7 - (Date.now() - currentTask.created)/86400000).toPrecision(2);
-            if (daysLeft > 0) {
-                return daysLeft;
+            var millisecsLeft = (Date.now() - currentTask.created);
+            var daysLeft = Math.floor(7-(millisecsLeft/86400000));
+            var days = ((7-((Date.now() - currentTask.created)/86400000))%24)-daysLeft;
+            var hoursLeft = (days*24).toPrecision(4);
+            var hours = Math.floor(hoursLeft);
+            var minsLeft = Math.floor((hoursLeft-hours)*60);
+            var output = daysLeft + ' days; ' + hours + ' hrs.; ' + minsLeft + ' mins.';
+            //var daysLeft = (7 - (Date.now() - currentTask.created)/86400000).toPrecision(2);
+            if (minsLeft >= 0) {
+                return output;
             } else {
                 tasksRef.child(currentTask.$id).update({status: 'expired'});
                 tasksRef.child(currentTask.$id).update({expired: true});
